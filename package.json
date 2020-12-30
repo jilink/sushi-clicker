@@ -18,7 +18,9 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
+    "svg-url-loader": "^7.1.1",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0",
     "webpack-dev-server": "^3.11.1"

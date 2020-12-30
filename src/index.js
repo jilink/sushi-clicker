@@ -1,4 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
+import App from "./App";
 
-render(<h1>Welcome to sushi clicker</h1>, document.getElementById("app"));
+render(
+  <>
+    <App />
+  </>,
+  document.getElementById("app")
+);
