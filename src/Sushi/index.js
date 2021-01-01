@@ -13,7 +13,14 @@ const Sushi = () => {
     setTimeout(() => setWidth("80px"), 100);
   };
   return (
-    <div style={{ textAlign: "center" }}>
+    <div
+      style={{
+        textAlign: "center",
+        MozUserSelect: "none",
+        WebkitUserSelect: "none",
+        msUserSelect: "none",
+      }}
+    >
       <h1>Welcome to webpack sushi cliker!!</h1>
       <div style={{ minHeight: "100px" }}>
         <SushiSVG
