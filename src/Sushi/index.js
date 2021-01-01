@@ -18,7 +18,7 @@ const Sushi = () => {
         onClick={handleClick}
         width={width}
       />
-      <p>You have {user.sushi} Sushis!</p>
+      <p>You have {Math.trunc(user.sushi)} Sushis!</p>
       <p>Automatic Click per secondes : {user.cps}</p>
     </div>
   );
