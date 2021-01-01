@@ -9,13 +9,11 @@ const App = () => {
   React.useEffect(() => {
     let timer;
 
-    if (true) {
-      timer = setInterval(() => {
-        setUser((user) => {
-          return { ...user, sushi: user.sushi + user.cps };
-        });
-      }, 1000);
-    }
+    timer = setInterval(() => {
+      setUser((user) => {
+        return { ...user, sushi: user.sushi + user.cps };
+      });
+    }, 1000);
     return () => clearInterval(timer);
   }, []);
 

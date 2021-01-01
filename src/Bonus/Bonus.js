@@ -10,8 +10,12 @@ const Bonus = ({ type = 0, name = "Bonus", cps = 0.2, price = 5 }) => {
   };
 
   return (
-    <button onClick={handleClick}>
-      {name} {cps}, coute {price}
+    <button
+      style={{ fontWeight: "bold", padding: "5px", margin: "5px" }}
+      disabled={price >= user.sushi}
+      onClick={handleClick}
+    >
+      {name} (+{cps} sushi par seconde) - Prix : {price} sushis
     </button>
   );
 };

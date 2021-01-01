@@ -9,17 +9,27 @@ const Sushi = () => {
 
   const handleClick = () => {
     setUser({ ...user, sushi: user.sushi + 1 });
+    setWidth("90px");
+    setTimeout(() => setWidth("80px"), 100);
   };
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>Welcome to webpack sushi cliker!!</h1>
-      <SushiSVG
-        style={{ cursor: "pointer" }}
-        onClick={handleClick}
-        width={width}
-      />
-      <p>You have {Math.trunc(user.sushi)} Sushis!</p>
-      <p>Automatic Click per secondes : {user.cps}</p>
+      <div style={{ minHeight: "100px" }}>
+        <SushiSVG
+          style={{ cursor: "pointer" }}
+          onClick={handleClick}
+          width={width}
+        />
+      </div>
+      <p>
+        You have <h2>{Math.trunc(user.sushi)}</h2> Sushis!
+      </p>
+      <hr />
+      <p>
+        Automatic Click per secondes : <h3>{user.cps}</h3>
+      </p>
+      <hr />
     </div>
   );
 };
