@@ -21,6 +21,8 @@
     "@babel/preset-react": "^7.12.10",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
     "svg-url-loader": "^7.1.1",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0",

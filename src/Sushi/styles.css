@@ -1,0 +1,24 @@
+.main-sushi:active .mouseClick {
+  position:absolute;
+  animation: 0.5s ease-out 0s 1 fadeIn;
+  opacity: 0;
+  pointer-events: none;
+  visibility: visible;
+}
+
+.mouseClick {
+  position:absolute;
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+  	opacity: 1;
+		transform: translateY(0%);
+		
+  }
+  to {
+    opacity: 0;
+		transform: translateY(-100%);
+  }
+}
