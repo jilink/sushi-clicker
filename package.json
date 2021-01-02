@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-tooltip": "^4.2.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
