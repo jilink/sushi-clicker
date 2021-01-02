@@ -8,7 +8,7 @@ const Sushi = () => {
   const { user, setUser } = React.useContext(UserContext);
 
   const handleClick = () => {
-    setUser({ ...user, sushi: user.sushi + 1 });
+    setUser({ ...user, sushi: user.sushi + user.click });
     setWidth("80px");
     setTimeout(() => setWidth("90px"), 50);
   };

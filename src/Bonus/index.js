@@ -1,3 +1,3 @@
-import BonusList from "./BonusList";
+import BonusList, { SpecialBonusList } from "./BonusList";
 
-export { BonusList };
+export { BonusList, SpecialBonusList };
