@@ -3,14 +3,14 @@ import SushiSVG from "../images/sushi.svg";
 import { UserContext } from "../UserContext";
 
 const Sushi = () => {
-  const [width, setWidth] = React.useState("80px");
+  const [width, setWidth] = React.useState("90px");
 
   const { user, setUser } = React.useContext(UserContext);
 
   const handleClick = () => {
     setUser({ ...user, sushi: user.sushi + 1 });
-    setWidth("90px");
-    setTimeout(() => setWidth("80px"), 100);
+    setWidth("80px");
+    setTimeout(() => setWidth("90px"), 50);
   };
   return (
     <div
@@ -34,7 +34,7 @@ const Sushi = () => {
       </p>
       <hr />
       <p>
-        Automatic Click per secondes : <h3>{user.cps}</h3>
+        Automatic Click per secondes : <h3>{user.cps.toFixed(1)}</h3>
       </p>
       <hr />
     </div>
