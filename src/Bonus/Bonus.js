@@ -10,23 +10,27 @@ const BonusButton = ({
     console.log("no onclick");
   },
   disabled = false,
+  src,
 }) => {
   return (
     <>
-      <button
+      <div
         style={{
           fontWeight: "bold",
           padding: "5px",
           margin: "5px",
           cursor: "pointer",
+          width: "100px",
+          opacity: disabled ? "0.2" : "1",
         }}
         onClick={onClick}
         data-tip
         data-for={`bonusTip${name}`}
         disabled={disabled}
       >
+        <img width="100px" src={src} />
         {name}
-      </button>
+      </div>
       <ReactTooltip
         id={`bonusTip${name}`}
         place="top"
@@ -39,7 +43,13 @@ const BonusButton = ({
   );
 };
 
-const Bonus = ({ name = "Bonus", tip = "Bonus", cps = 0.2, price = 5 }) => {
+const Bonus = ({
+  name = "Bonus",
+  tip = "Bonus",
+  cps = 0.2,
+  price = 5,
+  src,
+}) => {
   const { user, setUser } = React.useContext(UserContext);
 
   const [currentPrice, setCurrentPrice] = React.useState(price);
@@ -61,6 +71,7 @@ const Bonus = ({ name = "Bonus", tip = "Bonus", cps = 0.2, price = 5 }) => {
       tip={`${tip} (+${cps} sushi par seconde)`}
       disabled={currentPrice > user.sushi}
       onClick={handleClick}
+      src={src}
     />
   );
 };
@@ -70,6 +81,7 @@ const ClickBonus = ({
   tip = "Coach sushi",
   time = 1,
   price = 1,
+  src,
 }) => {
   const { user, setUser } = React.useContext(UserContext);
 
@@ -91,6 +103,7 @@ const ClickBonus = ({
       tip={`${tip} (Sushi par clique X ${time})`}
       disabled={currentPrice > user.sushi}
       onClick={handleClick}
+      src={src}
     />
   );
 };

@@ -23,7 +23,6 @@ const Sushi = () => {
   }, []);
 
   const handleClick = () => {
-    console.log(mousePosition);
     setUser({ ...user, sushi: user.sushi + user.click });
     setWidth("80px");
     setClicked(true);
