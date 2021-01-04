@@ -9,6 +9,9 @@
 .mouseClick {
   position:absolute;
   visibility: hidden;
+  color: #946fec;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 @keyframes fadeIn {

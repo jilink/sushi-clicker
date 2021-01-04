@@ -14,12 +14,14 @@ const BonusButton = ({
   src,
 }) => {
   return (
-    <div className="bonus-item">
+    <div
+      className="bonus-item"
+      style={{
+        opacity: disabled ? "0.2" : "1",
+      }}
+    >
       <div
         className="container"
-        style={{
-          opacity: disabled ? "0.2" : "1",
-        }}
         onClick={onClick}
         data-tip
         data-for={`bonusTip${name}`}

@@ -4,7 +4,7 @@
 }
 
 .bonus-item {
-  fontWeight: bold;
+  font-weight: bold;
   padding: 5px;
   margin: 5px;
   cursor: pointer;

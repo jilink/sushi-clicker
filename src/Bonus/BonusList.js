@@ -18,6 +18,13 @@ const BonusList = () => {
         tip="Saumon suicidaire qui se tranforme en sushi"
         src="../images/salmon.svg"
       />
+      <Bonus
+        price={200}
+        cps={10}
+        name="Restaurant"
+        tip="Ouvrez un restaurant de sushi"
+        src="../images/shop.svg"
+      />
     </div>
   );
 };

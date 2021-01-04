@@ -39,7 +39,6 @@ const Sushi = () => {
         msUserSelect: "none",
       }}
     >
-      <h1>Welcome to webpack sushi cliker!!</h1>
       <div
         className="main-sushi"
         style={{ minHeight: "100px" }}
@@ -57,14 +56,10 @@ const Sushi = () => {
         </p>
         <SushiSVG style={{ cursor: "pointer" }} width={width} />
       </div>
-      <p>
-        You have <h2>{Math.trunc(user.sushi)}</h2> Sushis!
-      </p>
-      <hr />
-      <p>
-        Automatic Click per secondes : <h3>{user.cps.toFixed(1)}</h3>
-      </p>
-      <hr />
+      <p> Nombre de sushi</p>
+      <h2>{Math.trunc(user.sushi)}</h2>
+      <p> Cliques automatiques par seconde</p>
+      <h3>{user.cps.toFixed(1)}</h3>
     </div>
   );
 };

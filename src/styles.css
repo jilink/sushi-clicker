@@ -1,0 +1,10 @@
+body {
+  background: black;
+  color: white;
+}
+
+hr {
+  color: #946fec;
+  border-color: #946fec;
+  background: #946fec;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { BonusList, SpecialBonusList } from "./Bonus";
+import "./styles.css";
 import Sushi from "./Sushi";
 import { UserContext } from "./UserContext";
 
