@@ -1,0 +1,22 @@
+.bonus-list {
+  display: flex;
+  text-align: center;
+}
+
+.bonus-item {
+  fontWeight: bold;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.container {
+  height: 100px;
+  position: relative;
+}
+
+.top-right {
+  position:absolute;
+  top: 8px;
+  right: 16px;
+}

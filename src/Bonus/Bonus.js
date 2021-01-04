@@ -10,17 +10,14 @@ const BonusButton = ({
     console.log("no onclick");
   },
   disabled = false,
+  total = 0,
   src,
 }) => {
   return (
-    <>
+    <div className="bonus-item">
       <div
+        className="container"
         style={{
-          fontWeight: "bold",
-          padding: "5px",
-          margin: "5px",
-          cursor: "pointer",
-          width: "100px",
           opacity: disabled ? "0.2" : "1",
         }}
         onClick={onClick}
@@ -28,8 +25,8 @@ const BonusButton = ({
         data-for={`bonusTip${name}`}
         disabled={disabled}
       >
-        <img width="100px" src={src} />
-        {name}
+        {total ? <div className="top-right">{total}</div> : null}
+        <img height="100%" src={src} />
       </div>
       <ReactTooltip
         id={`bonusTip${name}`}
@@ -39,7 +36,8 @@ const BonusButton = ({
       >
         {tip}
       </ReactTooltip>
-    </>
+      <p>{name}</p>
+    </div>
   );
 };
 
@@ -53,6 +51,7 @@ const Bonus = ({
   const { user, setUser } = React.useContext(UserContext);
 
   const [currentPrice, setCurrentPrice] = React.useState(price);
+  const [currentTotal, setCurrentTotal] = React.useState(0);
 
   const handleClick = () => {
     if (currentPrice <= user.sushi) {
@@ -62,6 +61,7 @@ const Bonus = ({
         sushi: user.sushi - currentPrice,
       });
       setCurrentPrice(Math.trunc(currentPrice * 1.3));
+      setCurrentTotal(currentTotal + 1);
     }
   };
 
@@ -72,6 +72,7 @@ const Bonus = ({
       disabled={currentPrice > user.sushi}
       onClick={handleClick}
       src={src}
+      total={currentTotal}
     />
   );
 };
@@ -86,6 +87,7 @@ const ClickBonus = ({
   const { user, setUser } = React.useContext(UserContext);
 
   const [currentPrice, setCurrentPrice] = React.useState(price);
+  const [currentTotal, setCurrentTotal] = React.useState(0);
 
   const handleClick = () => {
     if (currentPrice <= user.sushi) {
@@ -95,6 +97,7 @@ const ClickBonus = ({
         sushi: user.sushi - currentPrice,
       });
       setCurrentPrice(Math.trunc(currentPrice * 4));
+      setCurrentTotal(currentTotal + 1);
     }
   };
   return (
@@ -104,6 +107,7 @@ const ClickBonus = ({
       disabled={currentPrice > user.sushi}
       onClick={handleClick}
       src={src}
+      total={currentTotal}
     />
   );
 };

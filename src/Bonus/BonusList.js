@@ -1,9 +1,10 @@
 import React from "react";
 import Bonus, { ClickBonus } from "./Bonus";
+import "./styles.css";
 
 const BonusList = () => {
   return (
-    <div>
+    <div className="bonus-list">
       <Bonus
         price={5}
         name="Naruto"
@@ -23,7 +24,7 @@ const BonusList = () => {
 
 const SpecialBonusList = () => {
   return (
-    <div>
+    <div className="bonus-list">
       <ClickBonus
         price={150}
         name="Sushi Coach"
