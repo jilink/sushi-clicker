@@ -43,6 +43,10 @@ const BonusButton = ({
   );
 };
 
+const storeLocal = (user) => {
+  localStorage.setItem("user", JSON.stringify(user));
+};
+
 const Bonus = ({
   name = "Bonus",
   tip = "Bonus",
@@ -52,8 +56,18 @@ const Bonus = ({
 }) => {
   const { user, setUser } = React.useContext(UserContext);
 
-  const [currentPrice, setCurrentPrice] = React.useState(price);
-  const [currentTotal, setCurrentTotal] = React.useState(0);
+  const [currentPrice, setCurrentPrice] = React.useState(
+    JSON.parse(localStorage.getItem(name + "price")) || price
+  );
+  const [currentTotal, setCurrentTotal] = React.useState(
+    JSON.parse(localStorage.getItem(name + "total")) || 0
+  );
+
+  React.useEffect(() => {
+    storeLocal(user);
+    localStorage.setItem(name + "price", JSON.stringify(currentPrice));
+    localStorage.setItem(name + "total", JSON.stringify(currentTotal));
+  }, [user.cps]);
 
   const handleClick = () => {
     if (currentPrice <= user.sushi) {
@@ -88,8 +102,18 @@ const ClickBonus = ({
 }) => {
   const { user, setUser } = React.useContext(UserContext);
 
-  const [currentPrice, setCurrentPrice] = React.useState(price);
-  const [currentTotal, setCurrentTotal] = React.useState(0);
+  const [currentPrice, setCurrentPrice] = React.useState(
+    JSON.parse(localStorage.getItem(name + "price")) || price
+  );
+  const [currentTotal, setCurrentTotal] = React.useState(
+    JSON.parse(localStorage.getItem(name + "total")) || 0
+  );
+
+  React.useEffect(() => {
+    storeLocal(user);
+    localStorage.setItem(name + "price", JSON.stringify(currentPrice));
+    localStorage.setItem(name + "total", JSON.stringify(currentTotal));
+  }, [user.click]);
 
   const handleClick = () => {
     if (currentPrice <= user.sushi) {

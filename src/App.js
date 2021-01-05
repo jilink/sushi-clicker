@@ -5,7 +5,9 @@ import Sushi from "./Sushi";
 import { UserContext } from "./UserContext";
 
 const App = () => {
-  const [user, setUser] = React.useState({ sushi: 0, cps: 0, click: 1 });
+  const [user, setUser] = React.useState(
+    JSON.parse(localStorage.getItem("user")) || { sushi: 0, cps: 0, click: 1 }
+  );
 
   React.useEffect(() => {
     let timer;
