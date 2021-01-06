@@ -138,6 +138,51 @@ const ClickBonus = ({
   );
 };
 
-export { ClickBonus };
+const CpsBonus = ({
+  name = "Sushi Coach",
+  tip = "Coach sushi",
+  time = 1,
+  price = 1,
+  src,
+}) => {
+  const { user, setUser } = React.useContext(UserContext);
+
+  const [currentPrice, setCurrentPrice] = React.useState(
+    JSON.parse(localStorage.getItem(name + "price")) || price
+  );
+  const [currentTotal, setCurrentTotal] = React.useState(
+    JSON.parse(localStorage.getItem(name + "total")) || 0
+  );
+
+  React.useEffect(() => {
+    storeLocal(user);
+    localStorage.setItem(name + "price", JSON.stringify(currentPrice));
+    localStorage.setItem(name + "total", JSON.stringify(currentTotal));
+  }, [user.cps]);
+
+  const handleClick = () => {
+    if (currentPrice <= user.sushi) {
+      setUser({
+        ...user,
+        cps: user.cps * time,
+        sushi: user.sushi - currentPrice,
+      });
+      setCurrentPrice(Math.trunc(currentPrice * 10));
+      setCurrentTotal(currentTotal + 1);
+    }
+  };
+  return (
+    <BonusButton
+      name={`${name} - Prix : ${currentPrice} sushis`}
+      tip={`${tip} (auto-cliques par secondes X ${time})`}
+      disabled={currentPrice > user.sushi}
+      onClick={handleClick}
+      src={src}
+      total={currentTotal}
+    />
+  );
+};
+
+export { CpsBonus, ClickBonus };
 
 export default Bonus;

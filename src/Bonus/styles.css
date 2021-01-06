@@ -1,6 +1,8 @@
 .bonus-list {
   display: flex;
   text-align: center;
+  flex-flow: wrap;
+  place-content: center;
 }
 
 .bonus-item {
