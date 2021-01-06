@@ -4,6 +4,20 @@ import { UserContext } from "../UserContext";
 
 import "./styles.css";
 
+const getColor = (sushi) => {
+  if (sushi < 10) {
+    return "white";
+  } else if (sushi < 100) {
+    return "#bce8b0";
+  } else if (sushi < 1000) {
+    return "#74ccbb";
+  } else if (sushi < 10000) {
+    return "#da6988";
+  } else {
+    return "#ecc809";
+  }
+};
+
 const Sushi = () => {
   const [width, setWidth] = React.useState("90px");
   const [clicked, setClicked] = React.useState(false);
@@ -57,7 +71,9 @@ const Sushi = () => {
         <SushiSVG style={{ cursor: "pointer" }} width={width} />
       </div>
       <p> Nombre de sushi</p>
-      <h2>{Math.trunc(user.sushi)}</h2>
+      <h2 style={{ color: getColor(user.sushi), transition: "color 3s ease" }}>
+        {Math.trunc(user.sushi)}
+      </h2>
       <p> Cliques automatiques par seconde</p>
       <h3>{user.cps.toFixed(1)}</h3>
     </div>
