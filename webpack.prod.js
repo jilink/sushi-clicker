@@ -5,8 +5,4 @@ const path = require("path");
 module.exports = merge(common, {
   mode: "production",
   devtool: "source-map",
-  output: {
-    filename: "[name].[fullhash].js",
-    path: path.resolve(__dirname, "./dist"),
-  },
 });
