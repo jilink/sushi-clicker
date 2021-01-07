@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --progress"
+    "start": "webpack serve --progress --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "serve": "live-server dist"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +28,7 @@
     "svg-url-loader": "^7.1.1",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-dev-server": "^3.11.1",
+    "webpack-merge": "^5.7.3"
   }
 }

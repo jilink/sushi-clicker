@@ -1,13 +1,11 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
-  devServer: {
-    contentBase: path.resolve(__dirname, "./src"),
-    historyApiFallback: true,
-    port: 8000,
-  },
   entry: path.resolve(__dirname, "./src/index.js"),
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "./dist"),
+  },
   module: {
     rules: [
       {
@@ -24,8 +22,5 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
     ],
-  },
-  output: {
-    filename: "bundle.js",
   },
 };
