@@ -39,6 +39,13 @@ const BonusList = () => {
         tip="Planète à sushi"
         src="../images/planet.svg"
       />
+      <Bonus
+        price={325000}
+        cps={3000}
+        name="Planète for alex"
+        tip="Planète à sushi"
+        src="../images/planet.svg"
+      />
     </div>
   );
 };
@@ -59,6 +66,20 @@ const SpecialBonusList = () => {
         tip="Un Boost qui va augmenter vos sushis automatiques"
         time={2}
         src="../images/boost.svg"
+      />
+      <ClickBonus
+        price={5}
+        name="Wassim L'analyste"
+        tip="Coach chef Sushi qui vous fais travailler plus dur"
+        time={0.2}
+        src="../images/male-chef.svg"
+      />
+      <ClickBonus
+        price={1000000}
+        name="Sushi Coach just for alex"
+        tip="Coach chef Sushi qui vous fais travailler plus dur"
+        time={10}
+        src="../images/male-chef.svg"
       />
     </div>
   );
