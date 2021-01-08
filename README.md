@@ -8,5 +8,18 @@ You will also find multiple webpack configuration files, they are used depending
 
 # React
 Only functionnal component has been used, react hooks such as useContext have been helpfull to access global data, the game also saves himself to the local storage everytime you buy a new power up
+
+# Run the application
+
+To run the application in development mode at localhost:8000 you can simply use
+```bash
+npm start
+```
+
+To build the application use
+```bash
+npm run build
+```
+
 ___
 Feel free to clone the app and make your own clicker very easily, it is pretty simple to use the components to create your own power ups.
