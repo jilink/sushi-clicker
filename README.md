@@ -1,4 +1,6 @@
 # Sushi Clicker
+Demo here : https://sushi-clicker.netlify.app/
+
 Sushi Clicker is inspired by the famous game "Cookie Clicker" that you can try there : https://orteil.dashnet.org/cookieclicker/
 The goal is basically to get the most sushi you can, first by clicking and there by automation using all the power ups
 
